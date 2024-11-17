@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "541f52e3-ad65-4f56-b93b-2aa3660c7ef6",
+		"name": "Trello_AQA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26041693"
+	},
+	"item": [
+		{
+			"name": "Create org",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/organizations?displayName=Task15__AQA&key={{Trello_APY_KEY}}&token={{Trello_Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"organizations"
+					],
+					"query": [
+						{
+							"key": "displayName",
+							"value": "Task15__AQA"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?name=List&idBoard=672a279c7babe3b3af3da2c2&key={{Trello_APY_KEY}}&token={{Trello_Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "List"
+						},
+						{
+							"key": "idBoard",
+							"value": "672a279c7babe3b3af3da2c2"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/?name=Board&key={{Trello_APY_KEY}}&token={{Trello_Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Board"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=672a27aa1fd988f8991a0ddb&key={{Trello_APY_KEY}}&token={{Trello_Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "672a27aa1fd988f8991a0ddb"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/672a2ce3bc57cb7e33a58cf9/actions/comments?text=comment&key={{Trello_APY_KEY}}&token={{Trello_Token}}&id=672a2ce3bc57cb7e33a58cf9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"672a2ce3bc57cb7e33a58cf9",
+						"actions",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "comment"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						},
+						{
+							"key": "id",
+							"value": "672a2ce3bc57cb7e33a58cf9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get action",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/672a2ce3bc57cb7e33a58cf9/actions?key={{Trello_APY_KEY}}&token={{Trello_Token}}&id=672a2ce3bc57cb7e33a58cf9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"672a2ce3bc57cb7e33a58cf9",
+						"actions"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						},
+						{
+							"key": "id",
+							"value": "672a2ce3bc57cb7e33a58cf9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/672a2ce3bc57cb7e33a58cf9/actions/672a2d7c850acc632523c909/comments?key={{Trello_APY_KEY}}&token={{Trello_Token}}&text=update comment",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"672a2ce3bc57cb7e33a58cf9",
+						"actions",
+						"672a2d7c850acc632523c909",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						},
+						{
+							"key": "text",
+							"value": "update comment"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/672a2ce3bc57cb7e33a58cf9/actions/672a2d7c850acc632523c909/comments?idCard=672a2ce3bc57cb7e33a58cf9&idAction=672a2d7c850acc632523c909&key={{Trello_APY_KEY}}&token={{Trello_Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"672a2ce3bc57cb7e33a58cf9",
+						"actions",
+						"672a2d7c850acc632523c909",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "idCard",
+							"value": "672a2ce3bc57cb7e33a58cf9"
+						},
+						{
+							"key": "idAction",
+							"value": "672a2d7c850acc632523c909"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_APY_KEY}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
