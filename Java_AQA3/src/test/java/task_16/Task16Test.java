@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 
-public class Task16Test {
+public class  Task16Test {
 
     TrelloApiBO trelloApiBO = new TrelloApiBO();
 

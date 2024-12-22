@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Task_20 {
+public class Task20 {
     public static void main(String[] args) throws MalformedURLException {
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setCapability("platformName", "Android");

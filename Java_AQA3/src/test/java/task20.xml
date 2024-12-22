@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task20 Suite" verbose="1">
+
+    <listeners>
+        <listener class-name="task_20.Task20_Listener"/>
+    </listeners>
+
+    <test name="Task20 Test">
+        <classes>
+            <class name="task_20.Task20_DataProvider"/>
+        </classes>
+    </test>
+
+</suite>
