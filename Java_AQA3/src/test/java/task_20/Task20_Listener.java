@@ -28,7 +28,7 @@ public class Task20_Listener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         LOGGER.error("Test failed: " + result.getName());
-        saveScreenshot();
+        saveScreenshot("Failure Screenshot for " + result.getName());
     }
 
     @Override
@@ -51,8 +51,8 @@ public class Task20_Listener implements ITestListener {
         LOGGER.info("Test execution finished: " + iTestContext.getName());
     }
 
-    @Attachment(value = "Screenshot on failure", type = "image/png")
-    public byte[] saveScreenshot() {
+    @Attachment(value = "{name}", type = "image/png")
+    public byte[] saveScreenshot(String name) {
         try {
             if (getDriver() != null) {
                 return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);

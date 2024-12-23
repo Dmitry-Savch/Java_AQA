@@ -1,6 +1,9 @@
 package task_20;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -26,5 +29,13 @@ public class DriverManager {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    @Attachment(value = "Screenshot", type = "image/png")
+    public static byte[] takeScreenshot() {
+        if (driver == null) {
+            return new byte[0];
+        }
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
