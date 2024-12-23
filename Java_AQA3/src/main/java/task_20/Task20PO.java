@@ -13,19 +13,30 @@ public class Task20PO {
     }
 
     public void performCalculation() {
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_7")).click();
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/dec_point")).click();
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_9")).click();
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_3")).click();
-        driver.findElement(AppiumBy.accessibilityId("multiply")).click();
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_4")).click();
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/dec_point")).click();
-        driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_2")).click();
-        driver.findElement(AppiumBy.accessibilityId("equals")).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_7"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/dec_point"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_9"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_3"))).click();
+        new Element(driver.findElement(AppiumBy.accessibilityId("multiply"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_4"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/dec_point"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_2"))).click();
+        new Element(driver.findElement(AppiumBy.accessibilityId("equals"))).click();
     }
 
     public String getResult() {
         WebElement resultElement = driver.findElement(AppiumBy.id("com.android.calculator2:id/result"));
-        return resultElement.getText();
+        return new Element(resultElement).getText();
+    }
+
+    public void performAddition() {
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_5"))).click();
+        new Element(driver.findElement(AppiumBy.accessibilityId("plus"))).click();
+        new Element(driver.findElement(AppiumBy.id("com.android.calculator2:id/digit_3"))).click();
+        new Element(driver.findElement(AppiumBy.accessibilityId("equals"))).click();
+    }
+
+    public void clearCalculator() {
+        new Element(driver.findElement(AppiumBy.accessibilityId("clear"))).click();
     }
 }
